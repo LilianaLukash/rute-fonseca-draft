@@ -5,7 +5,8 @@
   --text: #f6f1ea;
   --muted: #b7aea3;
   --accent: #e23b2f;
-  --wa: #1faf5a;
+  --gold: #e6b325;
+  --wa: #e6b325;
   --pad: clamp(1rem, 3vw, 2rem);
   --max: 1080px;
   --font: "Outfit", system-ui, sans-serif;
@@ -121,8 +122,8 @@ a { color: inherit; }
   font: inherit;
   font-weight: 600;
 }
-.btn-wa { background: var(--wa); color: #06210f; }
-.btn-wa:hover { filter: brightness(1.05); }
+.btn-wa { background: var(--gold); color: #1a1206; }
+.btn-wa:hover { background: #f0c84a; }
 .btn-ghost {
   background: transparent;
   color: var(--text);
@@ -143,7 +144,7 @@ a { color: inherit; }
   font-family: var(--display);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--gold);
 }
 .news-link {
   display: flex;
@@ -229,12 +230,11 @@ h1 {
 .shots figure, .reels figure { margin: 0; }
 .shots img, .reels video {
   width: 100%;
+  height: auto;
   display: block;
-  background: #000;
-  object-fit: cover;
+  background: #111;
+  object-fit: contain;
 }
-.shots img { aspect-ratio: 4 / 5; }
-.reels video { aspect-ratio: 9 / 16; background: #111; }
 .shots figcaption, .reels figcaption {
   margin-top: 0.35rem;
   color: var(--muted);
@@ -249,6 +249,7 @@ h1 {
   font-size: 1.7rem;
   line-height: 1;
   text-transform: uppercase;
+  color: var(--gold);
 }
 .facts span { color: var(--muted); font-size: 0.85rem; }
 
@@ -322,7 +323,7 @@ h2 {
 
 .prices .amount {
   margin: 0.2rem 0 0.4rem;
-  color: var(--text);
+  color: var(--gold);
   font-family: var(--display);
   font-size: 2.4rem;
   line-height: 0.9;
@@ -398,7 +399,8 @@ h2 {
     gap: 1.2rem 1.4rem;
   }
   .facts { align-self: stretch; }
-  .shots, .reels { grid-template-columns: repeat(3, 1fr); }
+  .shots { grid-template-columns: 1fr 1fr; }
+  .reels { grid-template-columns: repeat(3, 1fr); }
   .split { grid-template-columns: 1.4fr 0.8fr; gap: 1.4rem; }
   .cards-3 { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: 1fr 1fr; }

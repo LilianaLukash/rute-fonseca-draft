@@ -26,6 +26,7 @@ const DICT = {
     skip: "Saltar para o conteúdo",
     brandRole: "Fisioterapeuta",
     navWho: "Quem",
+    navWork: "Fotos",
     navWhat: "O que faço",
     navHow: "Como",
     navPrice: "Preços",
@@ -35,6 +36,18 @@ const DICT = {
     heroEye: "Desportos de combate · Lisboa",
     heroTitle: "Recuperação, performance e autonomia.",
     heroLede: "Ajudo-te a voltar a treinar, a prevenir a próxima lesão e a aguentar a carga da modalidade. No ringue e na vida.",
+    heroAlt: "Rute Fonseca no ringue, no campeonato nacional de Muay Thai",
+    workTitle: "No consultório e no treino",
+    workLead: "Fotos e vídeos recentes do Instagram. O vídeo começa quando carregas em play.",
+    altSession: "Rute Fonseca numa sessão de fisioterapia",
+    altBoots: "Botas de compressão pneumática",
+    altSpar: "Treino de Muay Thai no ringue",
+    capSession: "Sessão de fisioterapia",
+    capBoots: "Botas de compressão",
+    capSpar: "Treino e competição",
+    capV1: "Ser fisioterapeuta",
+    capV2: "De volta à rotina",
+    capV3: "Lições do treino: o clinch",
     ctaWa: "Falar no WhatsApp",
     ctaBook: "Marcar sessão",
     factSession: "cada sessão",
@@ -106,6 +119,7 @@ const DICT = {
     skip: "Skip to content",
     brandRole: "Physiotherapist",
     navWho: "Who",
+    navWork: "Photos",
     navWhat: "What I do",
     navHow: "How",
     navPrice: "Prices",
@@ -115,6 +129,18 @@ const DICT = {
     heroEye: "Combat sports · Lisbon",
     heroTitle: "Recovery, performance and autonomy.",
     heroLede: "I help you get back to training, lower the chance of the next injury, and handle the load of your sport. In the ring and in daily life.",
+    heroAlt: "Rute Fonseca in the ring at the Portuguese Muay Thai nationals",
+    workTitle: "In the clinic and in training",
+    workLead: "Recent photos and videos from Instagram. Press play to start a video.",
+    altSession: "Rute Fonseca in a physiotherapy session",
+    altBoots: "Pneumatic compression boots",
+    altSpar: "Muay Thai training in the ring",
+    capSession: "Physiotherapy session",
+    capBoots: "Compression boots",
+    capSpar: "Training and competition",
+    capV1: "Being a physiotherapist",
+    capV2: "Back to the routine",
+    capV3: "Training notes: the clinch",
     ctaWa: "Message on WhatsApp",
     ctaBook: "Book a session",
     factSession: "every session",
@@ -200,6 +226,10 @@ function apply(next) {
   });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     el.placeholder = t[el.dataset.i18nPlaceholder];
+  });
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const value = t[el.dataset.i18nAlt];
+    if (typeof value === "string") el.alt = value;
   });
   document.querySelectorAll("[data-lang]").forEach((btn) => {
     btn.setAttribute("aria-pressed", String(btn.dataset.lang === lang));
